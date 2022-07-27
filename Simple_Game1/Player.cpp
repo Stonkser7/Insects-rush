@@ -1,21 +1,18 @@
 #include "Player.h"
 
 
-Player::Player(std::string texture_file)
+Player::Player(std::string texture_file, sf::Vector2f spawnPos)
 {
 	texture.loadFromFile(texture_file);
 	sprite.setTexture(texture);
 	sprite.setOrigin(sprite.getLocalBounds().width / 2, sprite.getLocalBounds().height / 2);
+	sprite.setPosition(spawnPos);
 	speed = 100;		//per second
 	moveDir.x = 0;
 	moveDir.y = 0;
 }
 
 
-void Player::setPos(sf::Vector2f pos)
-{
-	sprite.setPosition(pos);
-}
 
 sf::Vector2f Player::getPos() const
 {

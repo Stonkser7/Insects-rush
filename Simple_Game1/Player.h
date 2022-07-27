@@ -20,14 +20,11 @@ public:
 	Player() = delete;
 	Player(const Player&) = delete;
 
-
-
-	Player(std::string texture_file);
-
+	Player(std::string texture_file, sf::Vector2f spawnPos);
 
 	enum class DIR { UP, DOWN, LEFT, RIGHT };
 
-	void setPos(sf::Vector2f pos);
+
 	sf::Vector2f getPos() const;
 	sf::Vector2f getMoveDir() const;
 
@@ -43,8 +40,6 @@ public:
 	float getSpeed() const;
 
 	sf::Sprite drawable() const;
-
-
 
 
 };
