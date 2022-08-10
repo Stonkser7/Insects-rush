@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TOOLS_H
+#define TOOLS_H
 
 #include <SFML/Graphics.hpp>
 
@@ -10,3 +11,5 @@ namespace tool {
 	sf::Vector2f normalized(sf::Vector2f vec);
 
 }
+
+#endif

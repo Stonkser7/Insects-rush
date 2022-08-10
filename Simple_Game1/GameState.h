@@ -1,4 +1,12 @@
-#pragma once
+#ifndef GAMESTATE_H
+#define GAMESTATE_H
 
 
-enum class GAMESTATE { MENU, SETTINGS, PLAY, EXIT, PAUSE };
+
+class GameState
+{
+
+};
+
+
+#endif

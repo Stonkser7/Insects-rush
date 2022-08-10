@@ -1,43 +1,47 @@
-#pragma once
+#ifndef MENU_H
+#define MENU_H
 
 #include <SFML/Graphics.hpp>
-#include "MainMenuData.h"
-#include <vector>
-#include "MenuItem.h"
-#include "GameState.h"
+#include "Game.h"
+#include "MenuStateBase.h"
+#include "MainMenuState.h"
 
-//Main menu class
+
 class Menu
 {
-	sf::RenderWindow* window;	//only for access, not for memory allocation
-	DATA::MainMenuData data;	//textures
-
-	sf::Sprite background;
-	sf::Sprite selecting_mark;
-
-	float buttons_indent_x;
-	std::vector<MenuItem> buttons;
-
-	void init();
-
-	void addMenuItem(sf::Texture& t, GAMESTATE action);
-
-	void adjust_buttons();
-
-	void checkForSelect();
-
-
-	void draw_frame();
-
 public:
-	Menu() = delete;
+	Menu(Game& game, MenuStateBase* state = new MainMenuState);
+
 	Menu(const Menu&) = delete;
 
-	Menu(sf::RenderWindow* win);
 
-	
+	void run();
 
-	GAMESTATE run();
+	const sf::Sprite& selectButton() const;
+	const sf::Sprite& settingsButton() const;
+	const sf::Sprite& exitButton() const;
+
+	Game& game_;
+private:
+
+	~Menu();
+
+
+	sf::Sprite select_level_s;
+	sf::Texture select_level_t;
+
+
+	sf::Sprite settings_s;
+	sf::Texture settings_t;
+
+	sf::Sprite exit_s;
+	sf::Texture exit_t;
+
+	sf::Sprite map_s;
+	sf::Texture map_t;
+
+	MenuStateBase* state_;
 
 };
 
+#endif

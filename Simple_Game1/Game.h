@@ -1,32 +1,23 @@
-#pragma once
-#include <SFML/Graphics.hpp>
-
-#include "GameData.h"
-
-#include "GameState.h"
+#ifndef GAME_H
+#define GAME_H
 
 #include "Menu.h"
 
-//#include "Player.h"
 
-class Game : public GameData
+class Game
 {
-	sf::RenderWindow* window;	//only for access, not for memory allocation
-	GAMESTATE state;
-
-	void initData();
-
 public:
-	Game(const Game&) = delete;
-	Game() = delete;
 
-	explicit Game(sf::RenderWindow* win);
+	sf::RenderWindow window_;
 
-	GAMESTATE getState() const;
 
-	void menu();
+private:
 
-	void play();
+
+
+
+
 
 };
 
+#endif
