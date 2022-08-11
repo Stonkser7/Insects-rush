@@ -13,29 +13,17 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\UI">
-      <UniqueIdentifier>{6f267de9-1dfa-4af9-949f-4278eaaa2c44}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\UI">
-      <UniqueIdentifier>{ca95b691-a963-4689-87ca-7ac70bce33e3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Utilities">
       <UniqueIdentifier>{c7997fce-ba35-453f-9a77-ba448ba97589}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Utilities">
       <UniqueIdentifier>{7608ec14-70e9-4af5-b1f6-18fbe2ae8066}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Data">
-      <UniqueIdentifier>{68bd2f6c-40a3-477a-bb79-49b449729025}</UniqueIdentifier>
+    <Filter Include="Header Files\Input">
+      <UniqueIdentifier>{3112b986-bdd5-4d6b-b4a1-519fed3e4844}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Data">
-      <UniqueIdentifier>{e0b42b52-f0a0-4ce3-99c1-d87f50b2e15b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Menu">
-      <UniqueIdentifier>{3391345b-5303-40f3-8c0f-34880c340d01}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Menu">
-      <UniqueIdentifier>{f1976e9b-84e9-43af-b472-4112bf6ae84c}</UniqueIdentifier>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{6f7ee3ce-56da-4f68-8c70-f8d6d7f6b344}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -48,14 +36,26 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameState.cpp">
+    <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainMenuState.cpp">
-      <Filter>Source Files\Menu</Filter>
+    <ClCompile Include="InputHandler.cpp">
+      <Filter>Source Files\Input</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Source Files\Menu</Filter>
+    <ClCompile Include="MoveUpCommand.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveDownCommand.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveLeftCommand.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveRightCommand.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -65,17 +65,26 @@
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameState.h">
+    <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>Header Files\Menu</Filter>
+    <ClInclude Include="InputHandler.h">
+      <Filter>Header Files\Input</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenuState.h">
-      <Filter>Header Files\Menu</Filter>
+    <ClInclude Include="MoveUpCommand.h">
+      <Filter>Header Files\Input</Filter>
     </ClInclude>
-    <ClInclude Include="MenuStateBase.h">
-      <Filter>Header Files\Menu</Filter>
+    <ClInclude Include="Command.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveDownCommand.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveLeftCommand.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveRightCommand.h">
+      <Filter>Header Files\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

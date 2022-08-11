@@ -1,23 +1,21 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "Menu.h"
+#include <SFML/Graphics.hpp>
+#include "InputHandler.h"
+#include "Player.h"
+
 
 
 class Game
 {
 public:
 
-	sf::RenderWindow window_;
-
+	void run();
 
 private:
 
-
-
-
-
-
 };
+
 
 #endif
