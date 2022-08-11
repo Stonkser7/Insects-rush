@@ -2,7 +2,7 @@
 #include <cmath>
 #include <SFML/Graphics.hpp>
 
-
+#include "Game.h"
 
 
 void error(std::string s1, std::string s2 = "")
@@ -15,12 +15,10 @@ void error(std::string s1, std::string s2 = "")
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Untitled", sf::Style::Default);
 
+	Game IR;
 
-
-
-	//IR.run(/*level*/);
+	IR.run();
 
 
 

@@ -1,9 +1,11 @@
 #include "Player.h"
 
-Player::Player(): speed_(10)
+Player::Player(): speed_(7)
 {
 	t_.loadFromFile("Sprites\\basePlayer.png");
 	s_.setTexture(t_);
+	s_.setOrigin(s_.getLocalBounds().width / 2, s_.getLocalBounds().height / 2);
+	s_.setPosition(500, 400);
 }
 
 void Player::addDirUp()
@@ -24,6 +26,11 @@ void Player::addDirLeft()
 void Player::addDirRight()
 {
 	move_dir_.x += 1;
+}
+
+void Player::lookAt(sf::Vector2i point)
+{
+	s_.setRotation(std::atan2(s_.getPosition().y - point.y, s_.getPosition().x - point.x) * 180 / 3.14 - 90);
 }
 
 void Player::update()

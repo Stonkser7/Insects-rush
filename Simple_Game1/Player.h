@@ -12,6 +12,7 @@ public:
 	void addDirDown();
 	void addDirLeft();
 	void addDirRight();
+	void lookAt(sf::Vector2i point);
 
 	void update();
 	const sf::Sprite& sprite() const;
