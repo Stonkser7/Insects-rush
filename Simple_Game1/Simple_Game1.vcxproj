@@ -147,7 +147,6 @@
   <ItemGroup>
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MoveDownCommand.cpp" />
     <ClCompile Include="MoveLeftCommand.cpp" />
@@ -159,7 +158,6 @@
   <ItemGroup>
     <ClInclude Include="Command.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="InputHandler.h" />
     <ClInclude Include="MoveDownCommand.h" />
     <ClInclude Include="MoveLeftCommand.h" />
     <ClInclude Include="MoveRightCommand.h" />

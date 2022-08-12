@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "Command.h"
+#include "Player.h"
 
 class MoveUpCommand : public Command
 {

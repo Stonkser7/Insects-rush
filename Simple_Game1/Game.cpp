@@ -8,8 +8,8 @@ Game::Game()
 
 void Game::run()
 {
-	InputHandler inputHandler;
 	Player player;
+	player.~Player();
 
 	sf::Clock frame_timer;
 	float lag = 0.0;
@@ -28,7 +28,7 @@ void Game::run()
 			}
 		}
 
-		inputHandler.handleInput(player);
+		player.handleInput();
 		player.lookAt(sf::Mouse::getPosition(window_));
 
 		while (lag >= MS_PER_UPDATE) {

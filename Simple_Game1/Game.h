@@ -2,7 +2,6 @@
 #define GAME_H
 
 #include <SFML/Graphics.hpp>
-#include "InputHandler.h"
 #include "Player.h"
 
 

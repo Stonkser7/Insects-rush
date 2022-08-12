@@ -2,8 +2,8 @@
 #define COMMAND_H
 
 #include <SFML/Graphics.hpp>
-#include "Player.h"
 
+class Player;
 //base class
 class Command
 {
