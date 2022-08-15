@@ -1,13 +1,13 @@
 #include "Player.h"
 
-Player::Player(): speed_(7)
+Player::Player(): speed_(10)
 {
-	t_.loadFromFile("Sprites\\basePlayer.png");
+	t_.loadFromFile("Sprites\\test\\basePlayer.png");
 	s_.setTexture(t_);
 
 	s_.setOrigin(s_.getLocalBounds().width / 2, s_.getLocalBounds().height / 2);
 
-	s_.setPosition(500, 400);
+	s_.setPosition(960, 540);
 
 	addCommand(new MoveUpCommand(sf::Keyboard::Key::W));
 	addCommand(new MoveDownCommand(sf::Keyboard::Key::S));

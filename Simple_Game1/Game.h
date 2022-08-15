@@ -3,6 +3,9 @@
 
 #include <SFML/Graphics.hpp>
 #include "Player.h"
+#include "Camera.h"
+#include "Surface.h"
+#include <string>
 
 
 
