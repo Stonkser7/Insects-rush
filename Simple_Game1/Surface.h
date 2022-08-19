@@ -8,15 +8,13 @@
 class Surface
 {
 public:
-	Surface() = delete;
-	Surface(const Surface&) = delete;
-	Surface(const std::string& texture_file, sf::Vector2f sectors_size);
+	void init(const std::string& texture_file, sf::Vector2f sectors_size);
 
 	~Surface();
 	
 	void update(const sf::View& view);
 
-	void render(sf::RenderWindow* window);
+	void render(sf::RenderWindow& win);
 
 private:
 
@@ -26,11 +24,8 @@ private:
 
 	sf::Vector2f* sector_size_;
 
-	bool isEmptyHere(sf::Vector2f here);
+	bool isEmptyHere(sf::Vector2f Where);
 
-	void addSector(sf::Vector2f Where);
+	void addSector(sf::Vector2f here);
 };
-
-
-
 #endif

@@ -7,9 +7,7 @@
 class Camera
 {
 public:
-	Camera() = delete;
-	Camera(float speed, sf::Vector2f view);
-	Camera(float speed, sf::View view);
+	void init(sf::View view);
 
 	void follow(sf::Vector2f point);
 
@@ -19,8 +17,7 @@ private:
 
 	sf::View view_;
 
-	float speed_;
-	const float MAX_DISTANCE = 1500;
+	const float MAX_DISTANCE = 21;
 };
 
 #endif

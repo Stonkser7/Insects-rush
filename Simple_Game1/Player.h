@@ -12,18 +12,17 @@
 class Player
 {
 public:
-	Player();
-	~Player();
-	void addCommand(Command* command);
+	void init();
+
 	void addDirUp();
 	void addDirDown();
 	void addDirLeft();
 	void addDirRight();
 	void lookAt(sf::Vector2i point);
 
-	void handleInput();
 
 	void update();
+	void render(sf::RenderWindow& win);
 	const sf::Sprite& sprite() const;
 private:
 
@@ -33,7 +32,7 @@ private:
 	sf::Vector2f move_dir_;	//becomes normalized when update()
 	float speed_;
 
-	std::vector<Command*> commands_;
+
 };
 
 #endif
