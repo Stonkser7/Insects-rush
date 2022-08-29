@@ -11,7 +11,7 @@ void error(std::string s1, std::string s2 = "")
 }
 
 
-
+const float Game::MS_PER_UPDATE_ = 16;
 
 int main()
 {

@@ -14,19 +14,14 @@ Game::Game()
 
 	player_.init();
 
-	surface_.init("Sprites\\test\\surface2.jpg", { 1920, 1080 });
-
-	commands_.push_back(new MoveUpCommand(sf::Keyboard::Key::W));
-	commands_.push_back(new MoveDownCommand(sf::Keyboard::Key::S));
-	commands_.push_back(new MoveLeftCommand(sf::Keyboard::Key::A));
-	commands_.push_back(new MoveRightCommand(sf::Keyboard::Key::D));
-
-	current = 0.0;
-	lag = 0.0;
+	surface_.init({ 1920, 1080 });
 }
 
 void Game::run()
 {
+	sf::Clock frame_timer;
+	float current = 0.0;
+	float lag = 0.0;
 	frame_timer.restart();
 	while (window_.isOpen()) {
 		current = frame_timer.getElapsedTime().asMilliseconds();
@@ -48,34 +43,33 @@ void Game::run()
 
 		//UPDATE
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		while (lag >= MS_PER_UPDATE) {
+		while (lag >= MS_PER_UPDATE_) {
 			update();
-			lag -= MS_PER_UPDATE;
+			lag -= MS_PER_UPDATE_;
 		}
 
 		//RENDER
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		render();
 
+		lag += frame_timer.getElapsedTime().asMilliseconds() - current;
+
 		//std::cout << player.sprite().getPosition().x << " " << player.sprite().getPosition().y << std::endl;
 		//std::cout << std::setprecision(2) << std::fixed << cam().getCenter().x - cam().getSize().x / 2 << " --- " << cam().getCenter().y - cam().getSize().y / 2 << std::endl;
 	}
+}
 
-	for (auto x : commands_) {
-		delete x;
-	}
+const float& Game::MS_PER_UPDATE()
+{
+	return MS_PER_UPDATE_;
 }
 
 
 
 void Game::handleInput()
 {
-	for (auto x : commands_) {
-		if (sf::Keyboard::isKeyPressed(x->getKey())) {
-			x->execute(player_);
-		}
-	}
 
+	player_.handleInput();
 	sf::Vector2i cursor = static_cast<sf::Vector2i>((cam_().getCenter() - window_.getDefaultView().getCenter())) + sf::Mouse::getPosition(window_);
 	player_.lookAt(cursor);
 }
@@ -101,6 +95,4 @@ void Game::render()
 	player_.render(window_);
 
 	window_.display();
-
-	lag += frame_timer.getElapsedTime().asMilliseconds() - current;
 }

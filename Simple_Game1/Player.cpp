@@ -5,11 +5,12 @@ void Player::init()
 	t_.loadFromFile("Sprites\\test\\basePlayer.png");
 	s_.setTexture(t_);
 
-	s_.setOrigin(s_.getLocalBounds().width / 2, s_.getLocalBounds().height / 2);
+	//s_.setOrigin(s_.getLocalBounds().width / 2, s_.getLocalBounds().height / 2);
+	s_.setOrigin(31, 73);
 
 	s_.setPosition(960, 540);
 
-	speed_ = 10;
+	speed_ = 7;
 }
 
 void Player::addDirUp()
@@ -38,6 +39,26 @@ void Player::lookAt(sf::Vector2i point)
 }
 
 
+void Player::handleInput()
+{
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)) {
+		addDirUp();
+	}
+
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)) {
+		addDirDown();
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) {
+		addDirLeft();
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) {
+		addDirRight();
+	}
+}
+
 void Player::update()
 {
 	sf::Vector2f direction = tool::normalized(move_dir_);
@@ -49,6 +70,8 @@ void Player::update()
 void Player::render(sf::RenderWindow& win)
 {
 	win.draw(s_);
+
+
 }
 
 const sf::Sprite& Player::sprite() const

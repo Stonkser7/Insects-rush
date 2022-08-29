@@ -8,7 +8,7 @@
 class Surface
 {
 public:
-	void init(const std::string& texture_file, sf::Vector2f sectors_size);
+	void init(sf::Vector2f sectors_size);
 
 	~Surface();
 	

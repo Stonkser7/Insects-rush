@@ -5,9 +5,9 @@
 
 ////////////////////
 
-void Surface::init(const std::string& texture_file, sf::Vector2f sectors_size)
+void Surface::init(sf::Vector2f sectors_size)
 {
-	t_.loadFromFile(texture_file);
+	t_.loadFromFile("Sprites\\test\\surface1.jpg");
 
 	sector_size_ = new sf::Vector2f(sectors_size);
 
@@ -15,7 +15,7 @@ void Surface::init(const std::string& texture_file, sf::Vector2f sectors_size)
 	sf::RectangleShape* first_sector = new sf::RectangleShape;
 	first_sector->setSize(*sector_size_);
 	first_sector->setTexture(&t_);
-	first_sector->setFillColor(sf::Color(70, 130, 180));
+	first_sector->setFillColor(sf::Color(87, 161, 222));
 	sectors_.push_back(first_sector);
 
 	///////////////////////////// ÁÎÐÄÅÐ ÁÎÊÑ, ÁÅÄÍßÃÀ, ÁÅÇ ÏÀÌßÒÈ ÆÈÂ¨Ò. ÏÐÎÑòî ÄÀÉ ÅÌÓ ÁÈÒÈÊÎÂ, èëè òåáå æàëêî???? -_-
@@ -92,6 +92,6 @@ void Surface::addSector(sf::Vector2f here)
 	sf::RectangleShape* new_sector = new sf::RectangleShape(*sector_size_);
 	new_sector->setPosition(factor_x * sector_size_->x, factor_y * sector_size_->y);
 	new_sector->setTexture(&t_);
-	new_sector->setFillColor(sf::Color(70, 130, 180));
+	new_sector->setFillColor(sf::Color(87, 161, 222));
 	sectors_.push_back(new_sector);
 }

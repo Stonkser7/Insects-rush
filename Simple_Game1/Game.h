@@ -15,24 +15,21 @@ public:
 	Game();
 	void run();
 
+	static const float& MS_PER_UPDATE();
+
 private:
 	Camera cam_;
 	Surface surface_;
 	Player player_;
-	std::vector<Command*> commands_;
 
 	void handleInput();
 	void update();
 	void render();
 
 
-
-	const float MS_PER_UPDATE = 16;
-	sf::Clock frame_timer;
-	float current;
-	float lag;
+	static const float MS_PER_UPDATE_;
+	
 	sf::RenderWindow window_;
 };
-
 
 #endif

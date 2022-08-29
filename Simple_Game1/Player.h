@@ -4,10 +4,6 @@
 #include <vector>
 #include "Tools.h"
 #include <SFML/Graphics.hpp>
-#include "MoveUpCommand.h"
-#include "MoveDownCommand.h"
-#include "MoveLeftCommand.h"
-#include "MoveRightCommand.h"
 
 class Player
 {
@@ -20,10 +16,9 @@ public:
 	void addDirRight();
 	void lookAt(sf::Vector2i point);
 
-
+	void handleInput();
 	void update();
 	void render(sf::RenderWindow& win);
-	const sf::Sprite& sprite() const;
 private:
 
 	sf::Texture t_;
