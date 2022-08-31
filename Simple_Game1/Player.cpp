@@ -3,14 +3,18 @@
 void Player::init()
 {
 	t_.loadFromFile("Sprites\\test\\basePlayer.png");
-	s_.setTexture(t_);
 
-	//s_.setOrigin(s_.getLocalBounds().width / 2, s_.getLocalBounds().height / 2);
-	s_.setOrigin(31, 73);
+	body_.setTexture(t_);
 
-	s_.setPosition(960, 540);
+	body_.setOrigin(31, 74);
+
+	body_.setPosition(960, 540);
+
+	legs_.setPosition(body_.getPosition());
 
 	speed_ = 7;
+
+	animation_.setAnim(&Assets::getAssets().player_walk);
 }
 
 void Player::addDirUp()
@@ -35,7 +39,13 @@ void Player::addDirRight()
 
 void Player::lookAt(sf::Vector2i point)
 {
-	s_.setRotation(std::atan2(s_.getPosition().y - point.y, s_.getPosition().x - point.x) * 180 / 3.14 - 90);
+	body_.setRotation(std::atan2(body_.getPosition().y - point.y, body_.getPosition().x - point.x) * 180 / 3.14 - 90);
+	legs_.setRotation(std::atan2(body_.getPosition().y - point.y, body_.getPosition().x - point.x) * 180 / 3.14 - 90);
+}
+
+sf::Vector2f Player::getPos() const
+{
+	return body_.getPosition();
 }
 
 
@@ -59,22 +69,23 @@ void Player::handleInput()
 	}
 }
 
-void Player::update()
+void Player::update(float elapsed_time)
 {
 	sf::Vector2f direction = tool::normalized(move_dir_);
-	s_.move(direction * speed_);
+	body_.move(direction * speed_);
+
+	legs_.setPosition(body_.getPosition());
+
+
+	animation_.update(elapsed_time);
+	animation_.toSprite(legs_);
+
 	move_dir_.x = 0;
 	move_dir_.y = 0;
 }
 
 void Player::render(sf::RenderWindow& win)
 {
-	win.draw(s_);
-
-
-}
-
-const sf::Sprite& Player::sprite() const
-{
-	return s_;
+	win.draw(legs_);
+	win.draw(body_);
 }

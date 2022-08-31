@@ -6,9 +6,11 @@
 ////////////
 
 
-Game::Game()
+Game::Game() :MS_PER_UPDATE_(16)
 {
 	window_.create(sf::VideoMode(1920, 1080), "Game", sf::Style::Default);
+
+	Assets::getAssets().init();
 
 	cam_.init(window_.getDefaultView());
 
@@ -38,18 +40,18 @@ void Game::run()
 		}
 
 		//INPUT HANDLING
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		///////////////////////////////////////////
 		handleInput();
 
 		//UPDATE
-		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		///////////////////////////////////////////
 		while (lag >= MS_PER_UPDATE_) {
 			update();
 			lag -= MS_PER_UPDATE_;
 		}
 
 		//RENDER
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		///////////////////////////////////////////
 		render();
 
 		lag += frame_timer.getElapsedTime().asMilliseconds() - current;
@@ -59,10 +61,6 @@ void Game::run()
 	}
 }
 
-const float& Game::MS_PER_UPDATE()
-{
-	return MS_PER_UPDATE_;
-}
 
 
 
@@ -77,9 +75,9 @@ void Game::handleInput()
 
 void Game::update()
 {
-	player_.update();
+	player_.update(MS_PER_UPDATE_);
 
-	cam_.follow(player_.sprite().getPosition());
+	cam_.follow(player_.getPos());
 
 	surface_.update(cam_());
 }

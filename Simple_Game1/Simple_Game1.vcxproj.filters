@@ -60,6 +60,9 @@
     <ClCompile Include="AnimationFrame.cpp">
       <Filter>Source Files\Animations</Filter>
     </ClCompile>
+    <ClCompile Include="Assets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tools.h">
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="AnimationFrame.h">
       <Filter>Header Files\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Assets.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

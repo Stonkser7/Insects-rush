@@ -8,9 +8,12 @@
 class Animation
 {
 public:
+
+	void addFrame(const std::string& file, const sf::IntRect& rect, float duration, sf::Vector2f origin);
+
 	const AnimationFrame& getFrame(int num) const;
 
-	void addFrame(const std::string& file, const sf::IntRect& rect, float delay);
+	int numberOfFrames() const;
 
 private:
 	std::vector<AnimationFrame> frames_;

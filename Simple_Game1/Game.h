@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include <SFML/Graphics.hpp>
+#include "Assets.h"
 #include "Player.h"
 #include "Camera.h"
 #include "Surface.h"
@@ -15,7 +16,6 @@ public:
 	Game();
 	void run();
 
-	static const float& MS_PER_UPDATE();
 
 private:
 	Camera cam_;
@@ -26,9 +26,8 @@ private:
 	void update();
 	void render();
 
+	const float MS_PER_UPDATE_;
 
-	static const float MS_PER_UPDATE_;
-	
 	sf::RenderWindow window_;
 };
 

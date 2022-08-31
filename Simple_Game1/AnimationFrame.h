@@ -6,10 +6,16 @@
 class AnimationFrame
 {
 public:
-	AnimationFrame(const std::string& file, const sf::IntRect& rect, float delay);
+	AnimationFrame() = delete;
+
+	AnimationFrame(const std::string& file, const sf::IntRect& rect, float duration, sf::Vector2f origin);
+	float getDuration() const;
+	const sf::Texture& getTexture() const;
+	sf::Vector2f getOrigin() const;
 private:
 	sf::Texture t_;
-	float delay_;
+	float duration_;
+	sf::Vector2f origin_;
 };
 
 #endif
