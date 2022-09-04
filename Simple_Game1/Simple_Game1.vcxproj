@@ -153,6 +153,8 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerIdleState.cpp" />
+    <ClCompile Include="PlayerWalkState.cpp" />
     <ClCompile Include="Surface.cpp" />
     <ClCompile Include="Tools.cpp" />
   </ItemGroup>
@@ -164,6 +166,9 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerIdleState.h" />
+    <ClInclude Include="PlayerState.h" />
+    <ClInclude Include="PlayerWalkState.h" />
     <ClInclude Include="Surface.h" />
     <ClInclude Include="Tools.h" />
   </ItemGroup>

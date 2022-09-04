@@ -12,6 +12,7 @@ public:
 	void init();
 
 	Animation player_walk;
+	sf::Texture player_base;
 
 private:
 	Assets() {};
