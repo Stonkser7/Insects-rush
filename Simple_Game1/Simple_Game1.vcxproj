@@ -150,6 +150,8 @@
     <ClCompile Include="AnimationFrame.cpp" />
     <ClCompile Include="Assets.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Fossil.cpp" />
+    <ClCompile Include="FossilsManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -164,6 +166,8 @@
     <ClInclude Include="AnimationFrame.h" />
     <ClInclude Include="Assets.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Fossil.h" />
+    <ClInclude Include="FossilsManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerIdleState.h" />

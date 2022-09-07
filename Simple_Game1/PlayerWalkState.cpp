@@ -1,8 +1,8 @@
 #include "PlayerWalkState.h"
 
+
 //FOR TESTS
 #include <iostream>
-
 
 
 void PlayerWalkState::init(Player& player)
@@ -16,29 +16,25 @@ void PlayerWalkState::init(Player& player)
 
 PlayerState* PlayerWalkState::handleInput(Player& player)
 {
-	bool isMoving = false;
-
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)) {
 		addDirUp();
-		isMoving = true;
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)) {
 		addDirDown();
-		isMoving = true;
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) {
 		addDirLeft();
-		isMoving = true;
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) {
 		addDirRight();
-		isMoving = true;
 	}
 
-	if (!isMoving) {
+	//std::cout << move_dir_.x << " -- " << move_dir_.y << std::endl;
+
+	if (move_dir_.x == 0 && move_dir_.y == 0) {
 		return new PlayerIdleState;
 	}
 	else {
@@ -56,7 +52,6 @@ void PlayerWalkState::update(Player& player, float elapsed_time)
 
 	legs_.setPosition(player.getPos());
 	legs_.setRotation(std::atan2(direction.x, -direction.y) * 180 / 3.14);
-	std::cout << legs_.getPosition().x + direction.x << " -- " << legs_.getPosition().y + direction.y << std::endl;
 
 	move_dir_.x = 0;
 	move_dir_.y = 0;

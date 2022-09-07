@@ -17,6 +17,8 @@ Game::Game() :MS_PER_UPDATE_(16)
 	player_.init();
 
 	surface_.init({ 1920, 1080 });
+
+	fossilsManager.randSpawn(player_.getPos(), 500);
 }
 
 void Game::run()
@@ -70,6 +72,13 @@ void Game::handleInput()
 	player_.handleInput();
 	sf::Vector2i cursor = static_cast<sf::Vector2i>((cam_().getCenter() - window_.getDefaultView().getCenter())) + sf::Mouse::getPosition(window_);
 	player_.lookAt(cursor);
+
+
+
+	//TEST
+	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::G)) {
+		fossilsManager.randSpawn(player_.getPos(), 500);
+	}*/
 }
 
 
@@ -90,6 +99,7 @@ void Game::render()
 	window_.clear();
 
 	surface_.render(window_);
+	fossilsManager.renderFossils(window_);
 	player_.render(window_);
 
 	window_.display();

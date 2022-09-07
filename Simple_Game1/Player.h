@@ -6,7 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include "AnimationComponent.h"
 #include "Assets.h"
-#include "PlayerWalkState.h"
+#include "PlayerIdleState.h"
 
 class Player
 {
@@ -16,6 +16,7 @@ public:
 	void lookAt(sf::Vector2i point);
 	void move(sf::Vector2f offset);
 	sf::Vector2f getPos() const;
+
 
 	void handleInput();
 	void update(float elapsed_time);

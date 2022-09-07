@@ -17,7 +17,7 @@ private:
 
 	sf::View view_;
 
-	const float MAX_DISTANCE = 15;
+	const float MAX_DISTANCE_ = 17;
 };
 
 #endif

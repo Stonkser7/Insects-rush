@@ -14,6 +14,8 @@ public:
 	Animation player_walk;
 	sf::Texture player_base;
 
+	sf::Texture fossil_base;
+
 private:
 	Assets() {};
 };

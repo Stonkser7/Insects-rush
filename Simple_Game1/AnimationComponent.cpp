@@ -3,8 +3,9 @@
 void AnimationComponent::update(float elapsed_time)
 {
 	timer_ += elapsed_time;
-	while (timer_ > anim_->getFrame(current_frame_).getDuration()) {
-		timer_ -= anim_->getFrame(current_frame_).getDuration();
+	float duration = anim_->getFrame(current_frame_).getDuration();
+	while (timer_ > duration) {
+		timer_ -= duration;
 
 		if (current_frame_ == anim_->numberOfFrames() - 1) {
 			current_frame_ = 0;
@@ -23,7 +24,10 @@ void AnimationComponent::setAnim(Animation* new_anim, int current_frame)
 
 void AnimationComponent::toSprite(sf::Sprite& target)
 {
-	target.setTextureRect(sf::IntRect(0, 0, anim_->getFrame(current_frame_).getTexture().getSize().x, anim_->getFrame(current_frame_).getTexture().getSize().y));
-	target.setTexture(anim_->getFrame(current_frame_).getTexture());
+	const sf::Texture& t = anim_->getFrame(current_frame_).getTexture();
+
+	target.setTextureRect(sf::IntRect(0, 0, t.getSize().x, t.getSize().y));
+	target.setTexture(t);
+
 	target.setOrigin(anim_->getFrame(current_frame_).getOrigin());
 }

@@ -37,6 +37,12 @@
     <Filter Include="Header Files\Player">
       <UniqueIdentifier>{7e20d987-d810-4b53-a95b-f8e98338a2de}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Fossils">
+      <UniqueIdentifier>{43407453-13e3-4c7c-8af7-a5c339f6316d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Fossils">
+      <UniqueIdentifier>{30bdbdd3-1aee-4117-841f-651e36879f72}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -75,6 +81,12 @@
     <ClCompile Include="PlayerWalkState.cpp">
       <Filter>Source Files\Player</Filter>
     </ClCompile>
+    <ClCompile Include="Fossil.cpp">
+      <Filter>Source Files\Fossils</Filter>
+    </ClCompile>
+    <ClCompile Include="FossilsManager.cpp">
+      <Filter>Source Files\Fossils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tools.h">
@@ -112,6 +124,12 @@
     </ClInclude>
     <ClInclude Include="PlayerWalkState.h">
       <Filter>Header Files\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Fossil.h">
+      <Filter>Header Files\Fossils</Filter>
+    </ClInclude>
+    <ClInclude Include="FossilsManager.h">
+      <Filter>Header Files\Fossils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

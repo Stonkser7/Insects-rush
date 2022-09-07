@@ -33,7 +33,8 @@ void Assets::init()
 
 	player_base.loadFromFile("Sprites\\test\\basePlayer.png");
 
-
+	//Fossil
+	fossil_base.loadFromFile("Sprites\\test\\test_fosill.png");
 }
 
 Assets& Assets::getAssets()

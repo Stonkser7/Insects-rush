@@ -6,7 +6,9 @@
 #include "Player.h"
 #include "Camera.h"
 #include "Surface.h"
+#include "FossilsManager.h"
 #include <string>
+#include <vector>
 
 
 
@@ -21,6 +23,7 @@ private:
 	Camera cam_;
 	Surface surface_;
 	Player player_;
+	FossilsManager fossilsManager;
 
 	void handleInput();
 	void update();
